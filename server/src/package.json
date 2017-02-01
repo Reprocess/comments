@@ -1,0 +1,27 @@
+{
+  "name": "comments-queue",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node index"
+  },
+  "xo": {
+    "esnext": true,
+    "space": true,
+    "semicolon": false,
+    "env": [
+      "node"
+    ],
+    "rules": {
+
+    },
+    "ignores": [
+      "dist/**",
+      "node_modules/**"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "firebase-admin": "^4.0.4",
+    "firebase-queue": "^1.6.1"
+  }
+}
