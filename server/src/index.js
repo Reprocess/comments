@@ -21,10 +21,8 @@ const USER_PRIVATE_REF = AUTH_REF.child('userReadable')
 const PUBLIC_NOTES_REF = AUTH_REF.child('allMembers').child('notes')
 const VIDEOS_REF = AUTH_REF.child('allMembers').child('videos')
 const VIDEOS_COMMENTS_REF = AUTH_REF.child('allMembers').child('videosComments')
-let globalData
 
 const commentsQueue = new Queue(COMMENTS_QUEUE_REF, {sanitize: false}, (data, progress, resolve, reject) => {
-  globalData = data
   // Read and process task data
   progress(10)
 
@@ -149,9 +147,6 @@ const app = express()
 app.get('/', (req, res) => {
   res.send(`<h1>Hello Universe!</h1>
     <h2>The current time is: ${new Date().toISOString()}!</h2>
-    <ul>
-      <li>action received: ${globalData.action}</li>
-    </ul>
     `)
 })
 
